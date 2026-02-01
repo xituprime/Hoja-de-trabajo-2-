@@ -34,4 +34,14 @@ public class VectorStackTest {
         assertFalse(pila.isEmpty());
     }
     
+    @Test
+    public void clearTest() {
+        Stack<Integer> pila = new VectorStack<>();
+        pila.push(1);
+        pila.push(2);
+        pila.push(3);
+        assertEquals(3, pila.size());
+        pila.clear();
+        assertTrue(pila.isEmpty());
+    }
 }

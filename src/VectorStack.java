@@ -42,4 +42,9 @@ public class VectorStack<T> implements Stack<T> {
     public int size(){
         return elementos.size();
     }
+
+    @Override
+    public void clear(){
+        elementos.clear();
+    }
 }

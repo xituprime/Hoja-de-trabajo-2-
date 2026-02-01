@@ -4,6 +4,7 @@ import org.junit.Test;
 import src.PostfixCalculatorImpl;
 import src.Stack;
 import src.VectorStack;
+import org.junit.Before;
 
 import src.PostfixCalculator;
 
@@ -11,7 +12,7 @@ public class PostfixCalculatorImplTest {
 
     private PostfixCalculator calculadora;
 
-    @BeforeEach
+    @Before
     public void setUp() {
         Stack<Integer> pila = new VectorStack<>();
         calculadora = new PostfixCalculatorImpl(pila);
@@ -31,20 +32,22 @@ public class PostfixCalculatorImplTest {
 
     @Test
     public void testDivisionEntreCero() {
-        Exception exception = assertThrows(
-                Exception.class,
-                () -> calculadora.evaluar("10 0 /")
-        );
-        assertEquals("División entre cero", exception.getMessage());
+        try {
+            calculadora.evaluar("10 0 /");
+            fail("Se esperaba una excepción por división entre cero");
+        } catch (Exception e) {
+            assertEquals("División entre cero", e.getMessage());
+        }
     }
 
     @Test
     public void testOperandosInsuficientes() {
-        Exception exception = assertThrows(
-                Exception.class,
-                () -> calculadora.evaluar("5 +")
-        );
-        assertEquals("Operandos insuficientes", exception.getMessage());
+        try {
+            calculadora.evaluar("5 +");
+            fail("Se esperaba una excepción por operandos insuficientes");
+        } catch (Exception e) {
+            assertEquals("Operandos insuficientes", e.getMessage());
+        }
     }
 }
 

@@ -1,8 +1,8 @@
 package src;
 public interface Stack<T>{
 
-    // Agrega un elemento a la cima de la pila
-    void push(T elemento);
+    // Agrega un valor a la cima de la pila
+    void push(T value);
 
     // Elimina y retorna el elemento en la cima de la pila
     T pop();
@@ -15,4 +15,7 @@ public interface Stack<T>{
 
     // Retorna el número de elementos en la pila
     int size();
+
+    // Limpia todos los elementos de la pila
+    void clear();
 }
