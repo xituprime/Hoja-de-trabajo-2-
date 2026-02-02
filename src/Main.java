@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Main {
     
     public static void main(String[] args) {
-        String archivoPath = "txt/expresiones.txt";
+        String archivoPath = "txt/datos.txt";
         
         System.out.println("=== Calculador de Expresiones Postfijas ===\n");
         System.out.println("Leyendo expresiones desde: " + archivoPath + "\n");
